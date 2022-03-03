@@ -13,10 +13,10 @@ Opens the provided file with the defined url scheme handler
   
 ### RegisterScheme
 
-```ProtocolHandler.exe RegisterScheme -protocol="<protocol>" -handlerPath="<path to the exe>" -forMachine=false```
+```ProtocolHandler.exe RegisterScheme -protocol="<protocol>" -handlerPath="<path to the exe>" -forMachine=<bool> -install=<bool>```
 
-for example ```ProtocolHandler.exe RegisterScheme -protocol="ms-powerpoint" -handlerPath="C:\Users\%username%\AppData\Roaming\Citrix\SelfService\Powerpoint.exe"```  
-Registers the url scheme in the registry config
+for example ```ProtocolHandler.exe RegisterScheme -protocol="ms-powerpoint" -handlerPath="C:\Users\%username%\AppData\Roaming\Citrix\SelfService\Powerpoint.exe" -install```  
+Registers the url scheme in the registry config and also installs it for use
 
 ### InstallUrlSchemes
 
@@ -24,3 +24,11 @@ Registers the url scheme in the registry config
 
 for example ```ProtocolHandler.exe InstallUrlSchemes -schemes="ms-excel,ms-word,ms-powerpoint"```  
 Installs the registered schemes in the registry classes
+
+## Supported Schemes
+
+Currently supports fixed schemes/protocol discovery via regex. There is an active Issue to refactor this to support variable schemes provided by the user.
+
+* MS-WORD
+* MS-EXCEL
+* MS-POWERPOINT

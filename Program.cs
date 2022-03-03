@@ -31,9 +31,14 @@ namespace ProtocolHandler
 
     class App
     {
+        /// <summary>
+        /// Open the provided file via the appropriate url-handler. Will be written to the registry as a command
+        /// </summary>
+        /// <param name="path">URL/scheme to open</param>
         [Verb(IsDefault = true)]
         public static void Open(string path)
         {
+            //paths will be url encoded
             path = path.UrlDecode();
 
             Console.WriteLine($"trying to resolve {path}");
@@ -87,6 +92,8 @@ namespace ProtocolHandler
 
             foreach (string scheme in schemes)
             {
+                Console.WriteLine($"installing scheme {scheme}");
+
                 string _base = @"Software\Classes\" + scheme;
 
                 Config.SetRegistryValue(key, _base, "URL protocol", "", RegistryValueKind.String);
@@ -96,7 +103,7 @@ namespace ProtocolHandler
         }
 
         [Verb]
-        public static void RegisterScheme(string protocol, string handlerPath, string arguments = "", bool forMachine = false)
+        public static void RegisterScheme(string protocol, string handlerPath, string arguments = "", bool forMachine = false, bool install = true)
         {
             Config.HIVE_KEYS key = Config.HIVE_KEYS.HKCU;
 
@@ -115,6 +122,11 @@ namespace ProtocolHandler
 
             if(arguments != "" && arguments != null)
                 Config.SetRegistryValue(key, Config.REG_BASE + @"\" + protocol, "AdditionalArguments", arguments, RegistryValueKind.String);
+
+            if(install)
+            {
+                InstallUrlSchemes(new string[] { protocol }, forMachine);
+            }
         }
 
         private static ProtocolResult ResolveProtocol(string path)
