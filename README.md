@@ -1,6 +1,6 @@
 # UniversalProtocolHandler
 
-This is a tool so simply provide URL Protocol Handler for the system or the current user to open specific apps.
+This is a tool to simply provide URL Protocol Handlers for the system or the current user to open specific apps.
 One use case could be to open Microsoft-365 ms-* (ms-excel, ms-word, ...) URL Schemes with Citrix Published Apps from Teams or Sharepoint Online.
 
 ## CLI Commands
