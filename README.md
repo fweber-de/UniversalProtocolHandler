@@ -32,3 +32,4 @@ Currently supports fixed schemes/protocol discovery via regex. There is an activ
 * MS-WORD
 * MS-EXCEL
 * MS-POWERPOINT
+* MECMRC
