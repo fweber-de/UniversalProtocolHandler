@@ -135,7 +135,8 @@ namespace ProtocolHandler
             {
                 @"(ms-excel):ofe\|u\|(https?:\/\/.*\.xlsx?)",
                 @"(ms-word):ofe\|u\|(https?:\/\/.*\.docx?)",
-                @"(ms-powerpoint):ofe\|u\|(https?:\/\/.*\.pptx?)"
+                @"(ms-powerpoint):ofe\|u\|(https?:\/\/.*\.pptx?)",
+                @"(mecmrc):\/\/(.*)"
             };
 
             ProtocolResult result = null;
