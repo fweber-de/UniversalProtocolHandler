@@ -7,7 +7,7 @@ One use case could be to open Microsoft-365 ms-* (ms-excel, ms-word, ...) URL Sc
 
 ### Open
 
-```ProtocolHandler.exe Open -path="<url from offcie online>"```
+```ProtocolHandler.exe Open -path="<url from office online>"```
   
 Opens the provided file with the defined url scheme handler
   
