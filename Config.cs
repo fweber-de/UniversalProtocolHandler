@@ -12,7 +12,7 @@ namespace ProtocolHandler
     {
         public enum HIVE_KEYS { HKCU, HKLM, HKCR }
 
-        public static string REG_BASE = "Software\\Linovag\\ProtocolHandler";
+        public static string REG_BASE = "Software\\fweber-de\\ProtocolHandler";
 
         public string Protocol { get; set; }
 
